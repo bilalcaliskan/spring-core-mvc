@@ -6,4 +6,8 @@ public interface DomainObject {
 
     void setId(Integer id);
 
+    Integer getVersion();
+
+    void setVersion(Integer version);
+
 }
