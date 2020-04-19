@@ -1,10 +1,9 @@
-package com.bcaliskan.springmvc.services;
+package com.bcaliskan.springmvc.services.mapservices;
 
 import com.bcaliskan.springmvc.domain.DomainObject;
 import java.util.*;
 
 public abstract class AbstractMapService  {
-
     protected Map<Integer, DomainObject> domainMap;
 
     public AbstractMapService() {

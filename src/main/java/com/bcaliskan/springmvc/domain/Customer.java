@@ -7,15 +7,17 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-public class Customer implements DomainObject {
+public class Customer extends AbstractDomainClass {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private String firstName, lastName, email, phoneNumber;
 
-    @Version
-    private Integer version;
+    @Embedded // We are embedding embeddable Address entity as billingAddress into Customer table
+    private Address billingAddress;
 
-    private String firstName, lastName, email, phoneNumber, addressLine1, addressLine2, city, state, zipCode;
+    @Embedded // We are embedding embeddable Address entity as shippingAddress into Customer table
+    private Address shippingAddress;
+
+    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    private User user;
 
 }

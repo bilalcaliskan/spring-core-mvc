@@ -8,14 +8,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Entity
-public class Product implements DomainObject {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-
-    @Version
-    private Integer version;
+public class Product extends AbstractDomainClass {
 
     private String description, imageUrl;
     private BigDecimal price;

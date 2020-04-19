@@ -1,7 +1,8 @@
-package com.bcaliskan.springmvc.services;
+package com.bcaliskan.springmvc.services.mapservices;
 
 import com.bcaliskan.springmvc.domain.DomainObject;
 import com.bcaliskan.springmvc.domain.Product;
+import com.bcaliskan.springmvc.services.ProductService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import java.util.*;

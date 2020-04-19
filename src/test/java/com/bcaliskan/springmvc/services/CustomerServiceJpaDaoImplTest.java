@@ -2,6 +2,7 @@ package com.bcaliskan.springmvc.services;
 
 import com.bcaliskan.springmvc.config.JpaIntegrationConfig;
 import com.bcaliskan.springmvc.domain.Customer;
+import com.bcaliskan.springmvc.domain.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,20 @@ public class CustomerServiceJpaDaoImplTest {
         List<Customer> customers = (List<Customer>) customerService.listAll();
 
         assert customers.size() == 3;
-
     }
+
+    @Test
+    public void testSaveWithUser() {
+
+        Customer customer = new Customer();
+        User user = new User();
+        user.setUsername("This is my user name");
+        user.setPassword("MyAwesomePassword");
+        customer.setUser(user);
+
+        Customer savedCustomer = customerService.saveOrUpdate(customer);
+
+        assert savedCustomer.getUser().getId() != null;
+    }
+
 }
