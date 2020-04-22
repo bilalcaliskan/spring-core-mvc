@@ -5,7 +5,7 @@
     <groupId>com.bcaliskan</groupId>
     <artifactId>springmvc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springmvc</name>
+    <name>spring-core-mvc</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
